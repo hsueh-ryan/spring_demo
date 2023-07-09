@@ -1,13 +1,22 @@
 package com.example.spring_demo.filter;
 
+import com.example.spring_demo.service.TestService;
 import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
 
-@Component
-public class MyFilter implements Filter {
+//@Component
+@WebFilter
+public class MyFilter1 implements Filter {
+
+    private final TestService testService;
+
+    public MyFilter1(TestService testService) {
+        this.testService = testService;
+    }
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -18,6 +27,7 @@ public class MyFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("執行 my filter ----");
+        testService.method();
         filterChain.doFilter(servletRequest,servletResponse);
     }
 
