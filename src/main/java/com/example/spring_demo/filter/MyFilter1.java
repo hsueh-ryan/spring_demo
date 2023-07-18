@@ -1,9 +1,8 @@
 package com.example.spring_demo.filter;
 
-import com.example.spring_demo.service.TestService;
+import com.example.spring_demo.service.impl.TestServiceImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
@@ -12,9 +11,9 @@ import java.io.IOException;
 @WebFilter
 public class MyFilter1 implements Filter {
 
-    private final TestService testService;
+    private final TestServiceImpl testService;
 
-    public MyFilter1(TestService testService) {
+    public MyFilter1(TestServiceImpl testService) {
         this.testService = testService;
     }
 
