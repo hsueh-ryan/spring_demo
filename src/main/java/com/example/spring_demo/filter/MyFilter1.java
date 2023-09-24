@@ -8,7 +8,7 @@ import java.io.IOException;
 
 
 //@Component
-@WebFilter
+//@WebFilter
 public class MyFilter1 implements Filter {
 
     private final TestServiceImpl testService;

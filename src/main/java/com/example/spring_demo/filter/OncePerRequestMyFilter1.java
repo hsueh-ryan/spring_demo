@@ -10,13 +10,14 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
-@Component
+//@Component
 @Order(3)
+@Component
 public class OncePerRequestMyFilter1 extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        System.out.println("執行 OncePerRequestMyFilter1 enter-----");
+//        System.out.println("執行 OncePerRequestMyFilter1 enter-----");
         filterChain.doFilter(request,response);
-        System.out.println("執行 OncePerRequestMyFilter1 exit-----");
+//        System.out.println("執行 OncePerRequestMyFilter1 exit-----");
     }
 }
